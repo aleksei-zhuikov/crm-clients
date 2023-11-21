@@ -1,3 +1,5 @@
+import { getInputSearch } from "./input.js"
+
 // Создаем шапку
 export function getHeader() {
   const header = document.createElement('header')
@@ -12,17 +14,11 @@ export function getHeader() {
   img.src = './assets/logo.svg'
   img.alt = 'logo'
 
-  // создаем input
-  const input = document.createElement('input')
-  input.classList.add('input-search')
-  Object.assign(input, {
-    type: 'text',
-    name: 'input-search',
-    id: 'search',
-    placeholder: 'Введите запрос'
-  })
+  const form = getInputSearch()
 
-  container.append(img, input)
+
+
+  container.append(img, form)
 
   header.append(container)
   return header
