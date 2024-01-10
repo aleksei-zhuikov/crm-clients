@@ -11,7 +11,7 @@ export function getHeader() {
   //создаем logo
   const img = document.createElement('img')
   img.classList.add('logo')
-  img.src = './assets/logo.svg'
+  img.src = './assets/svg/logo.svg'
   img.alt = 'logo'
 
   const form = getInputSearch()

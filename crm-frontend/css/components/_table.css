@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* table-layout: fixed; */
+}
+
+table th {
+  color: var(--txt_grey);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Оформление контента TH */
+.btn-th--color {
+  color: inherit;
+  display: flex;
+}
+
+
+@media screen and (max-width: 980px) {
+  .tableWrapper {
+    overflow-x: scroll;
+  }
+}
