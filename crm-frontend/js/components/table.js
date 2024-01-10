@@ -35,27 +35,31 @@ export function getTable() {
 
 
 // Вспомогающая функция по созданию контента в TH
-function createContentTH(text, name_svg = 'dng.svg', text2) {
+function createContentTH(text = '', name_svg, text2 = '') {
 
   const path = './assets/svg/'
 
   const buttonTH = document.createElement('button')
   const spanText1 = document.createElement('span')
-  const img = document.createElement('img')
   const spanText2 = document.createElement('span')
 
   buttonTH.classList.add('btn-reset', 'btn-th--color')
 
   spanText1.textContent = text
+  buttonTH.append(spanText1)
+
+  if (name_svg) {
+    const img = document.createElement('img')
+    Object.assign(img, {
+      src: `${path}${name_svg}`,
+      alt: 'arrow',
+      id: 'svg_arrow',
+    })
+    buttonTH.append(img)
+  }
+
   spanText2.textContent = text2
-
-  Object.assign(img, {
-    src: `${path}${name_svg}`,
-    alt: 'arrow',
-    id: 'svg_arrow',
-  })
-
-  buttonTH.append(spanText1, img, spanText2)
+  buttonTH.append(spanText2)
 
   return buttonTH
 }
